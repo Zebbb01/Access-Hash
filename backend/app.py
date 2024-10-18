@@ -41,8 +41,7 @@ def is_strong_password(password):
     if (len(password) >= 8 and
             re.search(r"[A-Z]", password) and
             re.search(r"[a-z]", password) and
-            re.search(r"\d", password) or
-            re.search(r"[!@#$%^&*_()-,.?\":{}|<>]", password)):  # Include special characters
+            re.search(r"\d", password)): 
         return True
     return False
 
@@ -104,7 +103,7 @@ def signup():
 
         # Validate the password strength
         if not is_strong_password(password):
-            return jsonify({"error": "Password must be at least 8 characters long and include upper, lower, digit, and special character"}), 400
+            return jsonify({"error": "Password must be at least 8 characters long and include upper, lower digit, and special character"}), 400
 
         # Hashing password with pepper
         hashed_password = bcrypt.hashpw((password + PEPPER).encode('utf-8'), bcrypt.gensalt())
