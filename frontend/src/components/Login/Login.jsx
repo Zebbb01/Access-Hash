@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import './Login.css';
 import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Importing eye icons
 import Spinner from '../Spinner/Spinner'; // Import the Spinner component
+import lock from '../../assets/padlock.png';
 
 const Login = ({ setUser }) => {
   const [email, setEmail] = useState("");
@@ -43,8 +44,13 @@ const Login = ({ setUser }) => {
         <Spinner />  // Show spinner when loading
       ) : (
         
-    <form className="form-container" onSubmit={handleLogin}>
-        <h2>Login</h2>
+      <form className="form-container" onSubmit={handleLogin}>
+        <div className="title-container">
+          <img src={lock} alt="Padlock Icon" className="padlock-icon" /> 
+          <h3 className="title">CryptoGuard</h3>
+        </div>
+        <hr className="divider" />
+        <h2 className="authText">Sign In</h2>
       <>
           <input
             type="email"
