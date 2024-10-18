@@ -64,7 +64,7 @@ const Signup = ({ setIsLogin }) => {
     }
     setLoading(true);
     try {
-      const response = await axios.post('https://server-auth-66bx.onrender.com/signup', { name, email, password }); // Add name to the request
+      const response = await axios.post('https://access-hash-yn9w.onrender.com/signup', { name, email, password }); // Add name to the request
       console.log("Signup Response.", response.data);
       setErrorMessage("");
       toast.success("Signup successful!");

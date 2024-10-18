@@ -23,7 +23,7 @@ const Login = ({ setUser }) => {
     e.preventDefault();
     setLoading(true); // Start spinner when login is clicked
     try {
-      const response = await axios.post('https://server-auth-66bx.onrender.com/login', { email, password });
+      const response = await axios.post('https://access-hash-yn9w.onrender.com/login', { email, password });
       const { user } = response.data;
       setUser(user); // Now stores the user data
       toast.success("Login successful!");
